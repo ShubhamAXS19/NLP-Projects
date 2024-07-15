@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poetry Sentiment Analysis</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        form { margin-bottom: 20px; }
+        textarea { width: 100%; height: 100px; }
+        button { margin-top: 10px; }
+        .result { background-color: #f0f0f0; padding: 10px; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Poetry Sentiment Analysis</h1>
+    <form method="POST">
+        <textarea name="verse" placeholder="Enter your poem verse here..."></textarea>
+        <br>
+        <button type="submit">Analyze Sentiment</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>Analysis Result:</h2>
+        <p><strong>Verse:</strong> {{ result.verse }}</p>
+        <p><strong>Sentiment:</strong> {{ result.sentiment }}</p>
+        <p><strong>Confidence:</strong> {{ result.confidence }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
